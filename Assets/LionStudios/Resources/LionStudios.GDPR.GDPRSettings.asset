@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e9aceb8643407b8520979c82e8115b, type: 3}
+  m_Name: LionStudios.GDPR.GDPRSettings
+  m_EditorClassIdentifier: 
+  appName: More Snacks!
+  fixItBannerHeight: 0.85
+  gdprPrefab: {fileID: 2580100979696526431, guid: 0c04077cf270f4ad1a311dfcf1d60aef,
+    type: 3}
+  font: {fileID: 0}
+  fontScale: 1
+  titleFontColor: {r: 1, g: 1, b: 1, a: 1}
+  baseFontColor: {r: 0, g: 0, b: 0, a: 1}
+  secondaryColor: {r: 1, g: 0, b: 0, a: 1}
+  showBorders: 1
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  privacyLinks:
+  - https://firebase.google.com/support/privacy
+  - https://policies.google.com/privacy/update
+  - https://www.facebook.com/policy.php
+  - https://unity3d.com/fr/legal/privacy-policy
+  - https://www.mintegral.com/en/privacy/
+  - https://www.tiktok.com/legal/privacy-policy?lang=en#privacy-eea
+  - https://vungle.com/privacy/
+  - https://fyber.com/Privacy-policy/
+  - https://www.inmobi.com/privacy-policy/
+  - https://ironsource.mobi/privacypolicy.html
+  - https://advertising.amazon.com/resources/ad-policy/en/gdpr
+  - https://www.smaato.com/privacy/
+  - https://lionstudios.cc/privacy/
+  - https://lionstudios.cc/terms/
+  - https://www.applovin.com/privacy/
+  - https://www.adjust.com/terms/privacy-policy/
+  - https://gameanalytics.com/privacy/
+  - https://www.adcolony.com/privacy-policy/
+  - https://yandex.com/legal/confidential/
+  - https://answers.chartboost.com/en-us/articles/200780269
+  - https://legal.my.com/us/mytarget/privacy/

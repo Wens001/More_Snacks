@@ -1,0 +1,5 @@
+                #pragma enable_cbuffer // force enable constant buffers to fix SRP Batcher support on Android
+
+                #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+                #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/UnityInstancing.hlsl"
+                #include "ShaderSpecificCommonSRP.cginc"

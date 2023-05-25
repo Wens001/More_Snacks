@@ -1,0 +1,406 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using LionStudios.Debugging;
+using UnityEngine;
+using UnityEngine.Serialization;
+using Debug = UnityEngine.Debug;
+
+#if UNITY_EDITOR
+using UnityEditor;
+using System.IO;
+using UnityEditor.VersionControl;
+#endif
+
+#if LK_USE_UNITY_IAP
+using UnityEngine.Purchasing;
+#endif
+
+namespace LionStudios
+{
+    /// <summary>
+    /// Class containing SDK keys and ad unit IDs for the publisher.
+    /// </summary>
+    public class LionSettings : ScriptableObject
+    {
+        public const string AUTO_UPDATE_ENABLED_KEY = "com.lionstudios.auto_update_enabled";
+        public const string DirName = "LionStudios";
+        public const string AssetDir = "Assets/" + DirName + "/Resources/";
+
+        protected static LionSettings _Settings;
+
+        public static LionSettings Get()
+        {
+            if (_Settings == null)
+            {
+                LionSettings inst = Resources.Load<LionSettings>(typeof(LionSettings).ToString());
+                if (inst == null)
+                {
+#if UNITY_EDITOR
+                    string assetName = typeof(LionSettings) + ".asset";
+                    Directory.CreateDirectory(AssetDir);
+
+                    inst = CreateInstance<LionSettings>();
+                    
+                    AssetDatabase.CreateAsset(inst, Path.Combine(AssetDir, assetName));
+                    AssetDatabase.SaveAssets();
+                    AssetDatabase.Refresh();
+#endif
+                }
+                _Settings = inst;
+            }
+
+            return _Settings;
+        }
+
+        public GeneralSettings _General = null;
+        public RemoteConfig _RemoteConfig = null;
+        public GDPR _GDPR = null;
+        public AppLovin _AppLovin = null;
+        public Facebook _Facebook = null;
+        public Adjust _Adjust = null;
+        public Firebase _Firebase = null;
+        public InAppPurchase _InAppPurchase = null;
+        public Debugging _Debugging = null;
+
+        [Serializable]
+        public class GeneralSettings
+        {
+            public static bool InitLionKitOnLoad => Get()._General._InitLionKitOnLoad;
+            public static bool UseMultiDexSupport => Get()._General._UseMultiDexSupport;
+            public static bool OverrideGradlePluginVersion => Get()._General._OverrideGradlePluginVersion;
+
+            public static bool UseProGuard
+            {
+                get
+                {
+#if UNITY_EDITOR
+                    #if UNITY_2020_1_OR_NEWER && UNITY_ANDROID
+                    if (PlayerSettings.Android.minifyDebug && PlayerSettings.Android.minifyRelease && PlayerSettings.Android.minifyWithR8)
+                    {
+                        Get()._General._UseProGuard = true;
+                    }
+                    #endif
+#endif
+                    
+                    return Get()._General._UseProGuard;
+                }
+                
+#if UNITY_EDITOR
+                set
+                {
+                    // turn on proguard minification in player settings
+                #if UNITY_2020_1_OR_NEWER && UNITY_ANDROID
+                    PlayerSettings.Android.minifyDebug = value;
+                    PlayerSettings.Android.minifyRelease = value;
+                    PlayerSettings.Android.minifyWithR8 = value;
+                #elif UNITY_ANDROID
+                    // toggle minify - debug
+                    EditorUserBuildSettings.androidDebugMinification =
+                        (value == true) ? AndroidMinification.Proguard : AndroidMinification.None;
+                    
+                    // toggle minify - release
+                    EditorUserBuildSettings.androidReleaseMinification =
+                        (value == true) ? AndroidMinification.Proguard : AndroidMinification.None;
+                #endif              
+                    Get()._General._UseProGuard = value;
+                }
+#endif
+            }
+
+            public static string GradlePluginOverride
+            {
+                get { return Get()._General._GradlePluginOverride; }
+                set
+                { 
+                    // validate version string
+                    Version result;
+                    if (!Version.TryParse(value, out result))
+                    {
+                        string msg = "Failed to change gradle plugin version."
+                                     + "Invalid version string.";
+                        LionDebug.Log(msg);
+                        return;
+                    }
+
+                    Get()._General._GradlePluginOverride = result.ToString();
+                }
+            }
+
+            public static bool EnableAppReview
+            {
+                get { return Get()._General._EnableAppReview; }
+                set { Get()._General._EnableAppReview = value; }
+            }
+
+            [SerializeField] private bool _InitLionKitOnLoad = true;
+            [SerializeField] private bool _EnableAppReview = false;
+
+            #region ANDROID SETTINGS
+            [SerializeField] private bool _UseMultiDexSupport = true;
+            [SerializeField] private bool _UseProGuard = true;
+            [SerializeField] private bool _OverrideGradlePluginVersion = false;
+            [FormerlySerializedAs("_GradlePluginVersion")] [SerializeField] private string _GradlePluginOverride;
+            #endregion
+
+            #region IOS SETTINGS
+
+            // todo: ios settings here
+
+            #endregion
+        }
+
+        [Serializable]
+        public class RemoteConfig
+        {
+            public static float MinimumInterstitialInterval => Get()._RemoteConfig._MinimumInterstitialInterval;
+            public static float RVInterstitialTimer =>Get()._RemoteConfig._RVInterstitialTimer; 
+            public static float InterstitialStartTimer =>Get()._RemoteConfig._InterstitialStartTimer;
+            public static int InterstitialStartLevel =>Get()._RemoteConfig._InterstitialStartLevel;
+
+            public static bool BannersDisabled => Get()._RemoteConfig._BannersDisabled; 
+
+            public float _MinimumInterstitialInterval = 0f;
+            public float _RVInterstitialTimer = 0f;
+            public float _InterstitialStartTimer = 0f;
+            public int _InterstitialStartLevel = 0;
+            public bool _BannersDisabled = false;
+        }
+
+        [Serializable]
+        public class GDPR
+        {
+            public static LionStudios.GDPR Prefab => Get()._GDPR._Prefab;
+            public static string AppName { get { return Get()._GDPR._AppName; }
+#if UNITY_EDITOR
+                set
+                {
+                    Get()._GDPR._AppName = value;
+                    UnityEditor.EditorUtility.SetDirty(Get());
+                }
+#endif
+            }
+
+            public static float FixItBannerHeight => Get()._GDPR._FixItBannerHeight;
+            public static Font Font => Get()._GDPR._Font;
+            public static float FontScale => Get()._GDPR._FontScale;
+            public static Color TitleFontColor => Get()._GDPR._TitleFontColor;
+            public static Color BaseFontColor =>Get()._GDPR._BaseFontColor;
+            public static Color SecondaryColor => Get()._GDPR._SecondaryColor; 
+            public static bool ShowBorders =>Get()._GDPR._ShowBorders;
+            public static Color BackgroundColor => Get()._GDPR._BackgroundColor;
+            public static List<string> PrivacyLinks =>Get()._GDPR._PrivacyLinks;
+
+
+            [SerializeField] LionStudios.GDPR _Prefab = null;
+            [SerializeField] string _AppName = "";
+            [SerializeField] float _FixItBannerHeight = 0.85f;
+            [SerializeField] Font _Font = null;
+            [SerializeField] float _FontScale = 1f;
+            [SerializeField] Color _TitleFontColor = Color.white;
+            [SerializeField] Color _BaseFontColor = Color.black;
+            [SerializeField] Color _SecondaryColor = Color.red;
+            [SerializeField] bool _ShowBorders = true;
+            [SerializeField] Color _BackgroundColor = Color.white;
+            [SerializeField] List<string> _PrivacyLinks = new List<string>();
+        }
+
+        [Serializable]
+        public class AppLovin
+        {
+            //
+            public static bool Enabled => Get()._AppLovin._Enabled;
+            public static string SDKKey =>  Get()._AppLovin._SDKKey;
+            public static bool MaxAdReviewEnabled => Get()._AppLovin._MaxAdReviewEnabled; 
+            public static Color BannerAdBackgroundColor => Get()._AppLovin._BannerAdBackgroundColor;
+
+
+            public static string RewardedAdUnitId
+            {
+                get
+                {
+                    if (!Get()._AppLovin._Enabled)
+                    {
+                        return String.Empty;
+                    }
+#if UNITY_IOS
+                    return Get()._AppLovin._iOSRewardedAdUnitId;
+#else
+                    return Get()._AppLovin._AndroidRewardedAdUnitId;
+#endif
+                }
+            }
+
+            public static string InterstitialAdUnitId
+            {
+                get
+                {
+                    if (!Get()._AppLovin._Enabled)
+                    {
+                        return String.Empty;
+                    }
+#if UNITY_IOS
+                    return Get()._AppLovin._iOSInterstitialAdUnitId;
+#else
+                    return Get()._AppLovin._AndroidInterstitialAdUnitId;
+#endif
+                }
+            }
+
+            public static string BannerAdUnitId
+            {
+                get
+                {
+                    if (!Get()._AppLovin._Enabled)
+                    {
+                        return String.Empty;
+                    }
+#if UNITY_IOS
+                    return Get()._AppLovin._iOSBannerAdUnitId;
+#else
+                    return Get()._AppLovin._AndroidBannerAdUnitId;
+#endif
+                }
+            }
+
+            public bool _Enabled = false;
+            public string _SDKKey = null;
+            public bool _MaxAdReviewEnabled = true;
+            public Color _BannerAdBackgroundColor = Color.white;
+
+#pragma warning disable 0414
+            public string _iOSRewardedAdUnitId = null;
+            public string _iOSInterstitialAdUnitId = null;
+            public string _iOSBannerAdUnitId = null;
+
+            public string _AndroidRewardedAdUnitId = null;
+            public string _AndroidInterstitialAdUnitId = null;
+            public string _AndroidBannerAdUnitId = null;
+
+            public string _iOSAdMobAppId = null;
+            public string _AndroidAdMobAppId = null;
+#pragma warning restore 0414
+        }
+
+        [Serializable]
+        public class Adjust
+        {
+            public static bool Enabled => Get()._Adjust._Enabled;
+            
+            public static bool IsSandbox
+            {
+                get
+                {
+                    var mode = Get()._Adjust._SandboxMode;
+                    if (mode == LionStudios.Adjust.SandboxMode.Default)
+                    {
+                        return Debug.isDebugBuild;
+                    }
+
+                    return mode == LionStudios.Adjust.SandboxMode.On;
+                }
+            }
+            
+            public static string Token
+            {
+                get
+                {
+#if UNITY_IOS
+                    return Get()._Adjust._iOSToken;
+#else
+                    return Get()._Adjust._AndroidToken;
+#endif
+                }
+            }
+
+            public bool _Enabled = true;
+            public LionStudios.Adjust.SandboxMode _SandboxMode = LionStudios.Adjust.SandboxMode.Default;
+
+#pragma warning disable 0414
+            public string _iOSToken = null;
+            public string _AndroidToken = null;
+#pragma warning restore 0414
+        }
+
+        [Serializable]
+        public class Facebook
+        {
+            public static bool Enabled => Get()._Facebook._Enabled;
+            public static string AppId => Get()._Facebook._AppId;
+            public static string AppName => Get()._Facebook._AppName;
+            public static bool AutoLogAppEventsEnabled => Get()._Facebook._AutoLogAppEventsEnabled;
+
+            public bool _Enabled = true;
+            public string _AppId = "";
+            public string _AppName = "";
+            public bool _AutoLogAppEventsEnabled = true;
+
+            public static bool IsEnabledWithId()
+            {
+                return Enabled && !string.IsNullOrEmpty(AppId);
+            }
+        }
+
+        [Serializable]
+        public class Firebase
+        {
+            public static bool Enabled => Get()._Firebase._Enabled;
+            public static bool RegisterForStandardEvents => Get()._Firebase._RegisterForStandardEvents;
+            public static bool RegisterForUAEvents => Get()._Firebase._RegisterForUAEvents;
+
+            [SerializeField] bool _Enabled = false;
+            [SerializeField] bool _RegisterForStandardEvents = false;
+            [SerializeField] bool _RegisterForUAEvents = true;
+        }
+
+        [Serializable]
+        public class InAppPurchase
+        {
+            #if LK_USE_UNITY_IAP
+            public enum EStoreAvailability
+            {
+                Both = 0,
+                AppleAppStore,
+                GooglePlayStore,
+            }
+            
+            [Serializable]
+            public class ProductConfig
+            {
+                [SerializeField] public bool productEnabled = true;
+                [SerializeField] public string productId = "new product";
+                [SerializeField] public ProductType productType = ProductType.Consumable;
+                [SerializeField] public EStoreAvailability productAvailability = EStoreAvailability.Both;
+            }
+
+            [SerializeField] private ProductConfig[] _Products = new ProductConfig[0];
+            public static ProductConfig[] GetAllProducts()
+            {
+                return Get()._InAppPurchase._Products;
+            }
+            #endif
+            
+            public static bool Enabled => Get()._InAppPurchase._Enabled; 
+            public static bool ValidatePurchases => Get()._InAppPurchase._ValidatePurchases;
+            public static bool AllowRestorePurchases => Get()._InAppPurchase._AllowRestorePurchases;
+
+            [SerializeField] bool _Enabled = false;
+            [SerializeField] bool _ValidatePurchases = false;
+            [SerializeField] bool _AllowRestorePurchases = false;
+        }
+
+        [Serializable]
+        public class Debugging
+        {
+            public static LionStudios.Debugging.LionDebugger Prefab => Get()._Debugging._Prefab;
+            public static bool EnableDebugger => Get()._Debugging._EnableDebugger;
+            public static bool ShowAtStartup => Get()._Debugging._ShowAtStartup;
+            public static LionDebug.DebugLogLevel DebugLevel => Get()._Debugging._DebugLevel;
+            
+            public bool _EnableDebugger = true;
+            [SerializeField] bool _ShowAtStartup = true;
+            [SerializeField] LionDebug.DebugLogLevel _DebugLevel = LionDebug.DebugLogLevel.Default;
+            [SerializeField] LionStudios.Debugging.LionDebugger _Prefab = null;
+        }
+    }
+}

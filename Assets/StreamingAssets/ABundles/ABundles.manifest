@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 2230758091
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: level.scene
+      Dependencies: {}

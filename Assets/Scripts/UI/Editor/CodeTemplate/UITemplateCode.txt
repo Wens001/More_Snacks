@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+namespace #NAMESPACE# {
+	public partial class #NAME# : MonoBehaviour, BasePanel
+	{
+		public Transform trans => transform;
+
+		public void OnEnter()
+		{
+			gameObject.SetActive(true);
+		}
+
+		public void OnExit()
+		{
+			gameObject.SetActive(false);
+		}
+
+		public void OnPause()
+		{
+        
+		}
+
+		public void OnResume()
+		{
+        
+		}
+
+		void Awake()
+		{
+			GetBindComponents(gameObject);
+		}
+
+	}
+}

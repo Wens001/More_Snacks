@@ -1,0 +1,71 @@
+{
+	"panelInfoList":
+	[
+		{
+			"panelType": "TapToPlayPanel",
+			"path": "UIPanel/TapToPlayPanel"
+		},
+
+		{
+			"panelType": "JoystickPanel",
+			"path": "UIPanel/JoystickPanel"
+		},
+
+		{
+			"panelType": "LosePanel",
+			"path": "UIPanel/LosePanel"
+		},
+
+		{
+			"panelType": "WinPanel",
+			"path": "UIPanel/WinPanel"
+		},
+
+		{
+			"panelType": "GamePanel",
+			"path": "UIPanel/GamePanel"
+		},
+
+		{
+			"panelType": "GuidePanel",
+			"path": "UIPanel/GuidePanel"
+		},
+
+		{
+			"panelType": "SkinPanel",
+			"path": "UIPanel/SkinPanel"
+		},
+		{
+			"panelType": "GetNewSkinPanel",
+			"path": "UIPanel/GetNewSkinPanel"
+		},
+		{
+			"panelType": "GetNewPropPanel",
+			"path": "UIPanel/GetNewPropPanel"
+		},
+		{
+			"panelType": "ChosePlayerPanel",
+			"path": "UIPanel/ChosePlayerPanel"
+		},
+		{
+			"panelType": "ScorePanel",
+			"path": "UIPanel/ScorePanel"
+		},
+		{
+			"panelType": "StorePanel",
+			"path": "UIPanel/StorePanel"
+		},
+		{
+			"panelType": "BundleSalePanel",
+			"path": "UIPanel/BundleSalePanel"
+		},
+		{
+			"panelType": "ChallengePanel",
+			"path": "UIPanel/ChallengePanel"
+		},
+		{
+			"panelType": "CoinLvPanel",
+			"path": "UIPanel/CoinLvPanel"
+		}
+	]
+}

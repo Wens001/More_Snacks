@@ -1,0 +1,248 @@
+ManifestFileVersion: 0
+CRC: 390642189
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 22640fba84e85ae9e5b221fb0cfb9e2c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e7696aaa1e68f3f166686a396980fbce
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 59
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0607606005397604c99be092c6cb21d9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c376fe808f730df4aa3ba2858400b738, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d5016b018432f224eb84ecb427b55e99, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7b69c542c9a8f4f44a3123e3fa103d13, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f01d1582ff54a56468cccf2b3bc10983, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 543c18f203694defac3b52ec137543b3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1c86ba130e5a5458a98e3b482192a6dd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 321dab135faa1fa4abb58662f04a33fe, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9c899c13eb4622b4abd2599d9d71d168, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eb8c2453df9cc9f48aa468f3c914e692, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 031dc173b8912b246aaed3b7e88df54e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8ffb05833b12b5b4c9faa33934ea3985, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f35efbb359f549c47b084322603945c9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: af39d3d4232b198468364fc2467a70bd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 75a030a5e305db64da9debc7ad3a0889, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d5d85236a06d42e40aa2b3b4b9d9f6eb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8be26f36bdb6a064aa35895367cbce84, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8c603586ac9ee6f4ebb662fe70bb3ea4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7149bd07623a2ee45b683b55a5eae128, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3dd761179eea4cf43b867b5cd68182a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ee729a774cc6dac4aa1e3f367505d7e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7fadced7c9f39dc42974a87e048bebf9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 189222f70412dc440b3d6be79d8f2f57, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6e038bf700cfa444fb16c6ef963be9f9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 67d4de287b46eb34e83a61e4f9115070, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7e377388ad61cc347aa7d8384fbe354f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 54a47d884cf1d644ab9e61a4fb01d271, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dd0a9798e6e18884f83e7a42c24812e0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eb9d6be80811ecb4c981277e9f89e1e2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cf33a1097a4e37740a784864e341491c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ff360b6903acc8944bf629bc265362d9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bfc863d93115a7b4793afb896ab83e70, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f462693a958df864e8cfadf20c64d39e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: addf127a6f292e9409f809e9cb1300e6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 079b46caafbb8af46823162fd0d94acf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fa5029da751ddf249b1046b78da0ca06, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b765e0b5af3bcf4a9deb5895e477da8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 115dfe7b0938447cbbf9507076f54049, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 58aecc2c3c48c9840b0f64a76429456f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 19e4446c38c2ed94594f8f513e771074, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a0a148cb245e7f47ac5245bdea9b322, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5792e8ecb658f4e49b49bd63611b44ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1f2bbd3d8b12aba4da75e0a4b6c3ff17, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 191c964dfde40fb489617e3371d4e7da, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fdd2562edaa72d243ad9a08538ed3715, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1dbf31be95e0fd347948f4181818d56b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 02ba16be2b1311a4288c79dd37a953dc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aa539e4f1ebd4f042977ef9ecb7cb911, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 138
+  Script: {instanceID: 0}
+- Class: 153
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 195
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
+- Class: 258
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scenes/level7.unity
+- Assets/Scenes/level4.unity
+- Assets/Scenes/level16.unity
+- Assets/Scenes/level1.unity
+- Assets/Scenes/level19.unity
+- Assets/Scenes/level2.unity
+- Assets/Scenes/level10.unity
+- Assets/Scenes/level34.unity
+- Assets/Scenes/level25.unity
+- Assets/Scenes/level17.unity
+- Assets/Scenes/level24.unity
+- Assets/Scenes/level31.unity
+- Assets/Scenes/level12.unity
+- Assets/Scenes/level26.unity
+- Assets/Scenes/level35.unity
+- Assets/Scenes/level44.unity
+- Assets/Scenes/level11.unity
+- Assets/Scenes/level20.unity
+- Assets/Scenes/level14.unity
+- Assets/Scenes/level18.unity
+- Assets/Scenes/level40.unity
+- Assets/Scenes/level22.unity
+- "Assets/Models/\u573A\u666F/garden/garden.unity"
+- Assets/Scenes/DiscountScene.unity
+- Assets/Scenes/level33.unity
+- Assets/Scenes/level6.unity
+- Assets/Scenes/level41.unity
+- Assets/Scenes/GetNewSkin.unity
+- Assets/Scenes/level36.unity
+- Assets/Scenes/level29.unity
+- Assets/Scenes/level37.unity
+- Assets/Scenes/level21.unity
+- Assets/Scenes/level5.unity
+- Assets/Scenes/level28.unity
+- Assets/Scenes/level32.unity
+- Assets/Scenes/level3.unity
+- Assets/Scenes/level39.unity
+- Assets/Scenes/level27.unity
+- Assets/Scenes/level8.unity
+- Assets/Scenes/level38.unity
+- Assets/Scenes/level9.unity
+- Assets/Scenes/level30.unity
+- Assets/Scenes/level15.unity
+- Assets/Scenes/level13.unity
+- Assets/Scenes/level42.unity
+- Assets/Scenes/level23.unity
+- Assets/Scenes/level43.unity
+Dependencies: []

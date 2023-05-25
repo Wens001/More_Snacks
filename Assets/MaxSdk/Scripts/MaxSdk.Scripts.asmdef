@@ -1,0 +1,15 @@
+{
+    "name": "MaxSdk.Scripts",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "LK_USE_MAX"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

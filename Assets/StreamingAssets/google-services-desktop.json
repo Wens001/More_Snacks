@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "818667654273",
+    "project_id": "more-snacks",
+    "storage_bucket": "more-snacks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818667654273:android:f87bdd1f76cc0598cfd180",
+        "android_client_info": {
+          "package_name": "com.casualgames.snack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818667654273-842t6hn9g3r5bv601ddlj8vqdbn7bqkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn-4ofVs8LVHWNewla7Clj-iuxwtd8f-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818667654273-842t6hn9g3r5bv601ddlj8vqdbn7bqkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

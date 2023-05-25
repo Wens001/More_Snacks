@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4444076243045543623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4444076243045543619}
+  - component: {fileID: 4444076243045543620}
+  m_Layer: 0
+  m_Name: buff1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4444076243045543619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444076243045543623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.65, y: 0, z: 0.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4444076243045543620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444076243045543623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d85236a06d42e40aa2b3b4b9d9f6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUseNewBuild: 0
+  refreshTime: 10
+  childBuffList:
+  - {fileID: 5026480708024689350, guid: d3bd855f0f00a4c4da3d323505f9466e, type: 3}
+  - {fileID: 3599494387008097458, guid: 07ccc1ddeaa5fae408e6ef62de240914, type: 3}
+  - {fileID: 4495059885521302614, guid: 320523767e119b74c9bec49e80847bd1, type: 3}
+  - {fileID: 3809682419946624048, guid: e3a8d471a133f714f88c214304d3979d, type: 3}
+  snackBuffList:
+  - {fileID: 5026480708024689350, guid: d3bd855f0f00a4c4da3d323505f9466e, type: 3}
+  - {fileID: 2030280701356690290, guid: 4db9905a0d7be8d44ae40dc6e20e7a2d, type: 3}
+  ShowBuffList:
+  - buff: {fileID: 5026480708024689350, guid: d3bd855f0f00a4c4da3d323505f9466e, type: 3}
+    canShow: 1
+  - buff: {fileID: 4495059885521302614, guid: 320523767e119b74c9bec49e80847bd1, type: 3}
+    canShow: 0
+  - buff: {fileID: 3599494387008097458, guid: 07ccc1ddeaa5fae408e6ef62de240914, type: 3}
+    canShow: 0
+  - buff: {fileID: 2030280701356690290, guid: 4db9905a0d7be8d44ae40dc6e20e7a2d, type: 3}
+    canShow: 0
+  - buff: {fileID: 3809682419946624048, guid: e3a8d471a133f714f88c214304d3979d, type: 3}
+    canShow: 0
+  nowBuffCount: 0
